@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "autoname": "field:department_code",
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "department_code",
+  "department_name",
+  "chart_label",
+  "column_break_order",
+  "display_order",
+  "sheet_name",
+  "source_reference",
+  "risk_section",
+  "business_risk",
+  "growth_recommendations",
+  "business_risk_reference"
+ ],
+ "fields": [
+  {
+   "description": "Structural code from SETTINGS!A41:A50; cannot be changed once created",
+   "fieldname": "department_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Department Code",
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "chart_label",
+   "fieldtype": "Data",
+   "label": "Chart Label"
+  },
+  {
+   "fieldname": "column_break_order",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Display Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sheet_name",
+   "fieldtype": "Data",
+   "label": "Workbook Sheet",
+   "read_only": 1
+  },
+  {
+   "description": "Workbook cell this value was imported from",
+   "fieldname": "source_reference",
+   "fieldtype": "Data",
+   "label": "Source cell",
+   "read_only": 1
+  },
+  {
+   "fieldname": "risk_section",
+   "fieldtype": "Section Break",
+   "label": "Growth Plan"
+  },
+  {
+   "fieldname": "business_risk",
+   "fieldtype": "Small Text",
+   "label": "Business Risk if the Function Stays Weak"
+  },
+  {
+   "fieldname": "growth_recommendations",
+   "fieldtype": "Table",
+   "label": "Growth Recommendations",
+   "options": "BHC Growth Recommendation"
+  },
+  {
+   "fieldname": "business_risk_reference",
+   "fieldtype": "Data",
+   "label": "Business Risk Source Cell",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Department",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Manager"
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Consultant"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "department_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "display_order",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "department_name",
+ "track_changes": 1
+}

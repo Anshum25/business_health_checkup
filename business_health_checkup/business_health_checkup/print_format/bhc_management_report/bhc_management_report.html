@@ -1,0 +1,142 @@
+{#- MANAGEMENT REPORT of the workbook (MANAGEMENT REPORT!A1:H115), from business_health_checkup.management.
+    All figures are stored results; management_report_for_print checks that the viewer may read the assessment.
+    Frappe's Jinja does not autoescape: every text value is escaped with |e; the charts are SVG already escaped. -#}
+{%- set r = management_report_for_print(doc.name) -%}
+{%- set h = r.header -%}
+<style>
+	.bhc-mr { font-size: 11px; color: #222; }
+	.bhc-mr h1 { font-size: 17px; margin: 0 0 2px; }
+	.bhc-mr h2 { font-size: 13px; margin: 16px 0 6px; padding-bottom: 2px; border-bottom: 1px solid #999; }
+	.bhc-mr table { width: 100%; border-collapse: collapse; margin-bottom: 4px; }
+	.bhc-mr th, .bhc-mr td { border: 1px solid #ccc; padding: 3px 5px; vertical-align: top; text-align: left; }
+	.bhc-mr th { background: #f2f2f2; }
+	.bhc-mr .num { text-align: right; white-space: nowrap; }
+	.bhc-mr .muted { color: #888; }
+	.bhc-mr .note { color: #666; font-size: 10px; margin: 2px 0 6px; }
+	.bhc-mr .banner { border: 2px solid #c0392b; color: #c0392b; padding: 4px 8px; font-weight: bold; margin: 6px 0; }
+	.bhc-mr .cards td { text-align: center; }
+	.bhc-mr .cards .big { font-size: 15px; font-weight: bold; }
+	.bhc-mr .swatch { display: inline-block; width: 10px; height: 10px; margin-right: 4px; vertical-align: middle; }
+	.bhc-mr .charts { text-align: center; }
+	.bhc-mr .charts svg { max-width: 100%; height: auto; }
+	.bhc-mr .signatures td { border: none; padding-top: 28px; }
+	.bhc-mr .no-break { page-break-inside: avoid; }
+</style>
+<div class="bhc-mr">
+	<h1>{{ _("MANUFACTURING BUSINESS HEALTH CHECKUP - MANAGEMENT REPORT") }}</h1>
+	<div>{{ _("Prepared by") }} {{ (h.consultant or _("(consultant)")) | e }}{% if h.consultancy_firm %}, {{ h.consultancy_firm | e }}{% endif %}
+		&nbsp;|&nbsp; {{ (h.assessment_label or h.assessment) | e }} &nbsp;|&nbsp; {{ h.assessment_date_text | e }}</div>
+	<div class="note">{{ _("Assessment") }} {{ h.assessment | e }} · {{ _("Scoring model") }} {{ (h.scoring_model_version or "") | e }}</div>
+	{%- if h.docstatus != 1 %}
+	<div class="banner">{{ _("Status: {0}. These results are not finalised and can still change.").format(h.status) | e }}</div>
+	{%- endif %}
+
+	<h2>1. {{ _("COMPANY PROFILE") }}</h2>
+	<table>
+		<tr><th style="width:18%">{{ _("Company") }}</th><td>{{ (r.profile.company or "") | e }}</td>
+			<th style="width:18%">{{ _("Contact Person") }}</th><td>{{ (r.profile.contact or "") | e }}</td></tr>
+		<tr><th>{{ _("Industry") }}</th><td>{{ (r.profile.industry or "") | e }}</td>
+			<th>{{ _("Location") }}</th><td>{{ (r.profile.location or "") | e }}</td></tr>
+		<tr><th>{{ _("Employees") }}</th><td>{{ (r.profile.employees or "") | e }}</td>
+			<th>{{ _("Annual Turnover (Rs Lakh)") }}</th><td>{{ (r.profile.annual_turnover_lakh or "") | e }}</td></tr>
+	</table>
+	<div class="note">{{ _("Company profile as currently recorded for the business.") }}</div>
+
+	<h2>2. {{ _("OVERALL BUSINESS HEALTH") }}</h2>
+	<table class="cards">
+		<tr><th>{{ _("Business Health Score") }}</th><th>{{ _("Maturity Level") }}</th><th>{{ _("Questions Answered") }}</th><th>{{ _("Gaps (High / Medium / Low)") }}</th></tr>
+		<tr><td class="big">{{ r.overall.score_text | e }}</td><td class="big">{{ (r.overall.maturity or "") | e }}</td>
+			<td class="big">{{ r.overall.answered | e }}</td><td class="big">{{ r.overall.gaps | e }}</td></tr>
+	</table>
+	<p>{{ r.overall.position | e }}</p>
+
+	<h2>3. {{ _("DEPARTMENT SCORES, RADAR & HEAT MAP") }}</h2>
+	<table>
+		<tr><th>{{ _("Department") }}</th><th class="num">{{ _("Score") }}</th><th>{{ _("Maturity") }}</th><th class="num">{{ _("Previous") }}</th><th class="num">{{ _("Change (points)") }}</th><th>{{ _("Coverage") }}</th></tr>
+		{%- for d in r.departments %}
+		<tr{% if not d.assessed %} class="muted"{% endif %}>
+			<td><span class="swatch" style="background:{{ d.color }}"></span>{{ d.label | e }}</td>
+			<td class="num">{{ d.score_text | e }}</td>
+			<td>{{ (d.short_maturity or "-") | e }}</td>
+			<td class="num">{{ d.previous_text | e }}</td>
+			<td class="num">{{ d.change_text | e }}</td>
+			<td>{{ d.coverage | e }}</td>
+		</tr>
+		{%- endfor %}
+	</table>
+	<div class="note">{{ _("“-” = not assessed: no applicable answer, so the stored 0 % is not a measured score. Change is shown only when both assessments have applicable answers.") }}</div>
+	<div class="charts no-break">{{ r.charts.radar }}{{ r.charts.bar }}</div>
+
+	<h2>4. {{ _("MAJOR STRENGTHS (highest-scoring functions)") }}</h2>
+	<table>
+		<tr><th>{{ _("Department") }}</th><th class="num">{{ _("Score") }}</th><th>{{ _("Maturity") }}</th></tr>
+		{%- for d in r.strengths %}
+		<tr{% if not d.assessed %} class="muted"{% endif %}><td>{{ d.department_name | e }}</td><td class="num">{{ d.score_text | e }}</td>
+			<td>{{ d.maturity | e }}{% if not d.assessed %} ({{ _("not assessed") }}){% endif %}</td></tr>
+		{%- endfor %}
+	</table>
+	<p>{{ r.critical_practices | e }}</p>
+
+	<h2>5. {{ _("CRITICAL GAPS (top 10 by priority and weightage)") }}</h2>
+	{%- if r.critical_gaps %}
+	<table>
+		<tr><th>#</th><th>{{ _("Department") }}</th><th>{{ _("Gap (question)") }}</th><th>{{ _("Priority") }}</th><th>{{ _("Recommendation") }}</th><th>{{ _("Business Risk if Unresolved") }}</th></tr>
+		{%- for g in r.critical_gaps %}
+		<tr class="no-break"><td>{{ g.no }}</td><td>{{ g.department | e }}</td><td>{{ (g.question or "") | e }}</td><td>{{ (g.priority or "") | e }}</td>
+			<td>{{ (g.recommendation or "") | e }}</td><td>{{ (g.business_risk or "") | e }}</td></tr>
+		{%- endfor %}
+	</table>
+	{%- if r.total_gaps > r.critical_gaps|length %}<div class="note">{{ _("{0} gaps in total; all are listed in the BHC Gap Analysis report.").format(r.total_gaps) | e }}</div>{% endif %}
+	{%- else %}
+	<p class="muted">{{ _("No gaps: no question was answered NO or PARTIALLY.") }}</p>
+	{%- endif %}
+
+	<h2>6. {{ _("PRIORITY AREAS (weakest functions) & BUSINESS RISK") }}</h2>
+	<table>
+		<tr><th>{{ _("Department") }}</th><th class="num">{{ _("Score") }}</th><th class="num">{{ _("Gaps") }}</th><th>{{ _("Business risk if the function stays weak") }}</th></tr>
+		{%- for d in r.priority_areas %}
+		<tr{% if not d.assessed %} class="muted"{% endif %}><td>{{ d.department_name | e }}{% if not d.assessed %} ({{ _("not assessed") }}){% endif %}</td>
+			<td class="num">{{ d.score_text | e }}</td><td class="num">{{ d.total_gaps }}</td><td>{{ (d.business_risk or "") | e }}</td></tr>
+		{%- endfor %}
+	</table>
+
+	<h2>7. {{ _("90-DAY ACTION PLAN (top 15 actions; full list in 90 DAY PLAN)") }}</h2>
+	{%- if r.action_plan %}
+	<table>
+		<tr><th>#</th><th>{{ _("Department") }}</th><th>{{ _("Action") }}</th><th>{{ _("Phase") }}</th><th>{{ _("Responsible") }}</th><th>{{ _("Due Date") }}</th></tr>
+		{%- for a in r.action_plan %}
+		<tr class="no-break"><td>{{ a.no }}</td><td>{{ a.department | e }}</td>
+			<td>{% if a.action %}{{ (a.agreed_action or "") | e }} <span class="muted">({{ _("action") }} {{ a.action | e }}, {{ a.action_status | e }})</span>
+				{% else %}{{ (a.recommendation or "") | e }} <span class="muted">({{ _("recommendation; no action created") }})</span>{% endif %}</td>
+			<td>{{ a.phase | e }}</td><td>{{ a.responsible | e }}</td>
+			<td>{{ a.due_date_text | e }}{% if a.due_date_text and not a.due_is_agreed %} <span class="muted">({{ _("suggested") }})</span>{% endif %}</td></tr>
+		{%- endfor %}
+	</table>
+	{%- else %}
+	<p class="muted">{{ _("No gaps, so no actions.") }}</p>
+	{%- endif %}
+
+	<h2>8. {{ _("KPI IMPROVEMENT PLAN (Owner's 10 numbers)") }}</h2>
+	<p class="muted">{{ r.kpi.reason | e }}</p>
+
+	<h2>9. {{ _("BUSINESS GROWTH ROADMAP (functions below the growth threshold, weakest first)") }}</h2>
+	{%- if r.roadmap %}
+	<table>
+		<tr><th>{{ _("Department") }}</th><th class="num">{{ _("Score") }}</th><th>{{ _("Growth programme - first three steps") }}</th></tr>
+		{%- for d in r.roadmap %}
+		<tr class="no-break{% if not d.assessed %} muted{% endif %}"><td>{{ d.department_name | e }}{% if not d.assessed %} ({{ _("not assessed") }}){% endif %}</td>
+			<td class="num">{{ d.score_text | e }}</td>
+			<td>{% for step in d.steps %}{{ loop.index }}. {{ step | e }}{% if not loop.last %}&nbsp;&nbsp; {% endif %}{% endfor %}</td></tr>
+		{%- endfor %}
+	</table>
+	{%- endif %}
+	<p>{{ r.roadmap_summary | e }}</p>
+
+	<h2>10. {{ _("CONSULTANT REMARKS & RECOMMENDED NEXT STEPS") }}</h2>
+	<div style="min-height: 50px; border: 1px solid #ccc; padding: 6px; white-space: pre-wrap;">{{ (r.remarks or "") | e }}</div>
+	<p>{{ r.next_reassessment | e }}</p>
+	<table class="signatures no-break">
+		<tr><td>{{ _("Signature") }}: ____________________&nbsp;&nbsp;&nbsp;{{ _("Consultant") }}</td>
+			<td>{{ _("Signature") }}: ____________________&nbsp;&nbsp;&nbsp;{{ _("Management") }}</td></tr>
+	</table>
+</div>

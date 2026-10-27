@@ -1,0 +1,343 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "autoname": "BHC-ASM-.YYYY.-.#####",
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "business",
+  "business_name",
+  "assessment_label",
+  "sequence_no",
+  "column_break_main",
+  "assessment_date",
+  "consultant",
+  "previous_assessment",
+  "status",
+  "amended_from",
+  "result_section",
+  "overall_score",
+  "overall_maturity",
+  "completion_percent",
+  "column_break_result",
+  "total_questions",
+  "answered_questions",
+  "earned_points",
+  "max_points",
+  "column_break_gaps",
+  "high_gaps",
+  "medium_gaps",
+  "low_gaps",
+  "total_gaps",
+  "results_summary_section",
+  "results_summary",
+  "department_section",
+  "department_results",
+  "responses_section",
+  "responses",
+  "remarks_section",
+  "consultant_remarks",
+  "calculation_section",
+  "scoring_model",
+  "scoring_model_version",
+  "rules_hash",
+  "column_break_calculation",
+  "calculated_on",
+  "suggested_reassessment_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "business",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Business",
+   "options": "BHC Business",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "business.business_name",
+   "fieldname": "business_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Company Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "assessment_label",
+   "fieldtype": "Data",
+   "label": "Assessment Label"
+  },
+  {
+   "fieldname": "sequence_no",
+   "fieldtype": "Int",
+   "label": "Assessment No.",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Assessment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "consultant",
+   "fieldtype": "Link",
+   "label": "Consultant",
+   "options": "User"
+  },
+  {
+   "description": "A finalised assessment of the same business, for comparison",
+   "fieldname": "previous_assessment",
+   "fieldtype": "Link",
+   "label": "Previous Assessment",
+   "options": "BHC Assessment"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nFinalised\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "BHC Assessment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "result_section",
+   "fieldtype": "Section Break",
+   "label": "Overall Result"
+  },
+  {
+   "bold": 1,
+   "fieldname": "overall_score",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Business Health Score",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "overall_maturity",
+   "fieldtype": "Data",
+   "label": "Maturity Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completion_percent",
+   "fieldtype": "Percent",
+   "label": "Completion %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_result",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_questions",
+   "fieldtype": "Int",
+   "label": "Questions",
+   "read_only": 1
+  },
+  {
+   "fieldname": "answered_questions",
+   "fieldtype": "Int",
+   "label": "Answered",
+   "read_only": 1
+  },
+  {
+   "fieldname": "earned_points",
+   "fieldtype": "Float",
+   "label": "Earned Points",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "max_points",
+   "fieldtype": "Float",
+   "label": "Applicable Max Points",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gaps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "high_gaps",
+   "fieldtype": "Int",
+   "label": "HIGH Gaps",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medium_gaps",
+   "fieldtype": "Int",
+   "label": "MEDIUM Gaps",
+   "read_only": 1
+  },
+  {
+   "fieldname": "low_gaps",
+   "fieldtype": "Int",
+   "label": "LOW Gaps",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_gaps",
+   "fieldtype": "Int",
+   "label": "Total Gaps",
+   "read_only": 1
+  },
+  {
+   "fieldname": "results_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Results Summary"
+  },
+  {
+   "fieldname": "results_summary",
+   "fieldtype": "HTML",
+   "label": "Results Summary"
+  },
+  {
+   "fieldname": "department_section",
+   "fieldtype": "Section Break",
+   "label": "Department Results"
+  },
+  {
+   "fieldname": "department_results",
+   "fieldtype": "Table",
+   "label": "Department Results",
+   "options": "BHC Assessment Department Result",
+   "read_only": 1
+  },
+  {
+   "fieldname": "responses_section",
+   "fieldtype": "Section Break",
+   "label": "Questions and Answers"
+  },
+  {
+   "fieldname": "responses",
+   "fieldtype": "Table",
+   "label": "Responses",
+   "options": "BHC Assessment Response"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Consultant Remarks"
+  },
+  {
+   "fieldname": "consultant_remarks",
+   "fieldtype": "Text",
+   "label": "Consultant Remarks & Recommended Next Steps"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "calculation_section",
+   "fieldtype": "Section Break",
+   "label": "Calculation"
+  },
+  {
+   "description": "Defaults to the scoring model marked as default",
+   "fieldname": "scoring_model",
+   "fieldtype": "Link",
+   "label": "Scoring Model",
+   "options": "BHC Scoring Model",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "scoring_model_version",
+   "fieldtype": "Data",
+   "label": "Scoring Model Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rules_hash",
+   "fieldtype": "Data",
+   "label": "Rules Fingerprint",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_calculation",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "calculated_on",
+   "fieldtype": "Datetime",
+   "label": "Calculated On",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "description": "Assessment date + 90 days (MANAGEMENT REPORT!B113); a suggestion only",
+   "fieldname": "suggested_reassessment_date",
+   "fieldtype": "Date",
+   "label": "Suggested Re-assessment",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-27 18:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Assessment",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Consultant",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "business_name,assessment_date,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "business_name",
+ "track_changes": 1
+}

@@ -1,0 +1,185 @@
+{
+	"_source": {
+		"workbook": "Business_Health_Checkup_System.xlsx",
+		"sha256": "e342438260134a3f9de84cb0586e6a2b271d3b4d35bedb5b097499c47d0e22fc",
+		"note": "Values copied verbatim from SETTINGS; formulas are documented in docs/workbook_audit.md"
+	},
+	"answer_options": [
+		{
+			"answer": "YES",
+			"score_fraction": 1,
+			"excluded": false,
+			"cell": "SETTINGS!A5:B5"
+		},
+		{
+			"answer": "PARTIALLY",
+			"score_fraction": 0.5,
+			"excluded": false,
+			"cell": "SETTINGS!A6:B6"
+		},
+		{
+			"answer": "NO",
+			"score_fraction": 0,
+			"excluded": false,
+			"cell": "SETTINGS!A7:B7"
+		},
+		{
+			"answer": "N/A",
+			"score_fraction": 0,
+			"excluded": true,
+			"cell": "SETTINGS!A8:B8"
+		}
+	],
+	"criticality_weights": [
+		{
+			"criticality": "Critical",
+			"weight": 10,
+			"cell": "SETTINGS!D5:E5"
+		},
+		{
+			"criticality": "Important",
+			"weight": 5,
+			"cell": "SETTINGS!D6:E6"
+		},
+		{
+			"criticality": "Standard",
+			"weight": 3,
+			"cell": "SETTINGS!D7:E7"
+		},
+		{
+			"criticality": "Basic",
+			"weight": 1,
+			"cell": "SETTINGS!D8:E8"
+		}
+	],
+	"maturity_bands": [
+		{
+			"lower_bound": 0,
+			"upper_bound_display": 0.3999,
+			"label": "CRITICAL IMPROVEMENT REQUIRED",
+			"short_label": "Critical",
+			"meaning": "Basic management systems missing; business at risk",
+			"cell": "SETTINGS!A12:E12"
+		},
+		{
+			"lower_bound": 0.4,
+			"upper_bound_display": 0.5999,
+			"label": "DEVELOPING",
+			"short_label": "Developing",
+			"meaning": "Systems partly in place; results depend on individuals",
+			"cell": "SETTINGS!A13:E13"
+		},
+		{
+			"lower_bound": 0.6,
+			"upper_bound_display": 0.7499,
+			"label": "MANAGED",
+			"short_label": "Managed",
+			"meaning": "Systems defined and mostly followed; improvement possible",
+			"cell": "SETTINGS!A14:E14"
+		},
+		{
+			"lower_bound": 0.75,
+			"upper_bound_display": 0.8999,
+			"label": "STRONG MANAGEMENT",
+			"short_label": "Strong",
+			"meaning": "Well-managed function; focus on optimisation",
+			"cell": "SETTINGS!A15:E15"
+		},
+		{
+			"lower_bound": 0.9,
+			"upper_bound_display": 1,
+			"label": "ADVANCED",
+			"short_label": "Advanced",
+			"meaning": "Best-practice level; sustain and benchmark",
+			"cell": "SETTINGS!A16:E16"
+		}
+	],
+	"priority_matrix": [
+		{
+			"criticality": "Critical",
+			"answer": "NO",
+			"priority": "HIGH",
+			"cell": "SETTINGS!B20"
+		},
+		{
+			"criticality": "Critical",
+			"answer": "PARTIALLY",
+			"priority": "MEDIUM",
+			"cell": "SETTINGS!C20"
+		},
+		{
+			"criticality": "Important",
+			"answer": "NO",
+			"priority": "MEDIUM",
+			"cell": "SETTINGS!B21"
+		},
+		{
+			"criticality": "Important",
+			"answer": "PARTIALLY",
+			"priority": "MEDIUM",
+			"cell": "SETTINGS!C21"
+		},
+		{
+			"criticality": "Standard",
+			"answer": "NO",
+			"priority": "LOW",
+			"cell": "SETTINGS!B22"
+		},
+		{
+			"criticality": "Standard",
+			"answer": "PARTIALLY",
+			"priority": "LOW",
+			"cell": "SETTINGS!C22"
+		},
+		{
+			"criticality": "Basic",
+			"answer": "NO",
+			"priority": "LOW",
+			"cell": "SETTINGS!B23"
+		},
+		{
+			"criticality": "Basic",
+			"answer": "PARTIALLY",
+			"priority": "LOW",
+			"cell": "SETTINGS!C23"
+		}
+	],
+	"priority_rules": [
+		{
+			"priority": "HIGH",
+			"rank_score": 3,
+			"phase": "0-30 Days",
+			"start_offset_days": 0,
+			"due_offset_days": 30,
+			"cell": "SETTINGS!E20:I20"
+		},
+		{
+			"priority": "MEDIUM",
+			"rank_score": 2,
+			"phase": "31-60 Days",
+			"start_offset_days": 31,
+			"due_offset_days": 60,
+			"cell": "SETTINGS!E21:I21"
+		},
+		{
+			"priority": "LOW",
+			"rank_score": 1,
+			"phase": "61-90 Days",
+			"start_offset_days": 61,
+			"due_offset_days": 90,
+			"cell": "SETTINGS!E22:I22"
+		}
+	],
+	"growth_plan_threshold": {
+		"value": 0.6,
+		"cell": "SETTINGS!B27"
+	},
+	"strength_threshold": {
+		"value": 0.75,
+		"cell": "SETTINGS!B28"
+	},
+	"kpi_watch_tolerance": {
+		"value": 0.1,
+		"cell": "SETTINGS!B29"
+	}
+}

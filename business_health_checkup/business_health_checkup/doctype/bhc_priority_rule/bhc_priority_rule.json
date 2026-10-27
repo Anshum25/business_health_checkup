@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "priority",
+  "rank_score",
+  "phase",
+  "start_offset_days",
+  "due_offset_days",
+  "source_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "HIGH\nMEDIUM\nLOW",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rank_score",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rank Score",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phase",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "90-Day Phase",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_offset_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Start (days after assessment)"
+  },
+  {
+   "fieldname": "due_offset_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Due (days after assessment)"
+  },
+  {
+   "description": "Workbook cell this value was imported from",
+   "fieldname": "source_reference",
+   "fieldtype": "Data",
+   "label": "Source cell",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Priority Rule",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

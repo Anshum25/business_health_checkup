@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "department_name",
+  "questions",
+  "answered",
+  "completion_percent",
+  "earned_points",
+  "max_points",
+  "score_percent",
+  "maturity",
+  "assessed",
+  "high_gaps",
+  "medium_gaps",
+  "low_gaps",
+  "total_gaps",
+  "growth_status"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "BHC Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "label": "Department Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "questions",
+   "fieldtype": "Int",
+   "label": "Questions",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "answered",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Answered",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completion_percent",
+   "fieldtype": "Percent",
+   "label": "Completion %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "earned_points",
+   "fieldtype": "Float",
+   "label": "Earned",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "max_points",
+   "fieldtype": "Float",
+   "label": "Max (applicable)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "score_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Score",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "maturity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Maturity Level",
+   "read_only": 1
+  },
+  {
+   "description": "At least one applicable answer (max > 0)",
+   "fieldname": "assessed",
+   "fieldtype": "Check",
+   "label": "Assessed",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "high_gaps",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "HIGH Gaps",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "medium_gaps",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "MEDIUM Gaps",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "low_gaps",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "LOW Gaps",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_gaps",
+   "fieldtype": "Int",
+   "label": "Total Gaps",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "description": "BUSINESS GROWTH PLAN!E8 rule; an unassessed department scores 0 and shows PRIORITY (see W-01 / Q-04)",
+   "fieldname": "growth_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Growth Plan Status",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Assessment Department Result",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

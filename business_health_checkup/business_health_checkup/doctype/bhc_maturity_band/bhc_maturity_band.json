@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lower_bound",
+  "upper_bound_display",
+  "label",
+  "short_label",
+  "meaning",
+  "source_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "lower_bound",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Lower Bound (score >=)",
+   "precision": "4",
+   "reqd": 1
+  },
+  {
+   "fieldname": "upper_bound_display",
+   "fieldtype": "Float",
+   "label": "Upper Bound (display only)",
+   "precision": "4"
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Maturity Level",
+   "reqd": 1
+  },
+  {
+   "fieldname": "short_label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Short Label"
+  },
+  {
+   "fieldname": "meaning",
+   "fieldtype": "Small Text",
+   "label": "Meaning"
+  },
+  {
+   "description": "Workbook cell this value was imported from",
+   "fieldname": "source_reference",
+   "fieldtype": "Data",
+   "label": "Source cell",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Maturity Band",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

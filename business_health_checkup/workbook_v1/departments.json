@@ -1,0 +1,478 @@
+{
+	"_source": {
+		"workbook": "Business_Health_Checkup_System.xlsx",
+		"sha256": "e342438260134a3f9de84cb0586e6a2b271d3b4d35bedb5b097499c47d0e22fc"
+	},
+	"departments": [
+		{
+			"code": "STR",
+			"sheet": "STRATEGY",
+			"name": "Business Strategy & Goals",
+			"label": "Strategy",
+			"order": 1,
+			"cell": "SETTINGS!A41:D41",
+			"business_risk": "Without a strategy and monitored goals, growth is accidental; the business stays owner-dependent and exposed to loss of one customer.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E77",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Write a 3-5 year growth strategy with turnover, margin, capacity and market targets",
+					"cell": "RECOMMENDATION MASTER!E4"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Fix annual turnover and profit targets and split them month-wise",
+					"cell": "RECOMMENDATION MASTER!E5"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Cascade goals to every department with owners and KPIs",
+					"cell": "RECOMMENDATION MASTER!E6"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Start a weekly cash-flow review and a monthly management review",
+					"cell": "RECOMMENDATION MASTER!E7"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Measure customer concentration and set a diversification plan",
+					"cell": "RECOMMENDATION MASTER!E8"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Prepare a business risk register and a succession plan for key positions",
+					"cell": "RECOMMENDATION MASTER!E9"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Plan capacity and capex against the 3-year sales forecast",
+					"cell": "RECOMMENDATION MASTER!E10"
+				}
+			]
+		},
+		{
+			"code": "KPI",
+			"sheet": "KPI",
+			"name": "KPI & Management Review",
+			"label": "KPI",
+			"order": 2,
+			"cell": "SETTINGS!A42:D42",
+			"business_risk": "Without KPIs and a monthly review, problems are found by customers and accountants months late; the same failures repeat.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E78",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Define 3-6 KPIs per department with formula, source, frequency and owner",
+					"cell": "RECOMMENDATION MASTER!E11"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Set a numeric target for every KPI for the current year",
+					"cell": "RECOMMENDATION MASTER!E12"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Build the owner's one-page 10-number dashboard",
+					"cell": "RECOMMENDATION MASTER!E13"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Hold a fixed monthly management review with a standard KPI deck",
+					"cell": "RECOMMENDATION MASTER!E14"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Introduce an action register and track closure of actions from every review",
+					"cell": "RECOMMENDATION MASTER!E15"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Start OEE, PPM, OTD and inventory-days measurement where missing",
+					"cell": "RECOMMENDATION MASTER!E16"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Validate KPI data sources so decisions rest on reliable numbers",
+					"cell": "RECOMMENDATION MASTER!E17"
+				}
+			]
+		},
+		{
+			"code": "HR",
+			"sheet": "HR",
+			"name": "Human Resources",
+			"label": "HR",
+			"order": 3,
+			"cell": "SETTINGS!A43:D43",
+			"business_risk": "Without manpower, skill and retention systems, output and quality depend on individuals and collapse when they leave.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E79",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Approve an organisation chart and job descriptions for all positions",
+					"cell": "RECOMMENDATION MASTER!E18"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Prepare a manpower plan linked to the production plan",
+					"cell": "RECOMMENDATION MASTER!E19"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Build a skill matrix and a multi-skilling plan for critical operations",
+					"cell": "RECOMMENDATION MASTER!E20"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Introduce a structured induction and an annual training calendar",
+					"cell": "RECOMMENDATION MASTER!E21"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Start a KPI-linked appraisal and a recognition/incentive scheme",
+					"cell": "RECOMMENDATION MASTER!E22"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Track attrition and absenteeism monthly and act on causes",
+					"cell": "RECOMMENDATION MASTER!E23"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Maintain a statutory compliance calendar and develop second-line leaders",
+					"cell": "RECOMMENDATION MASTER!E24"
+				}
+			]
+		},
+		{
+			"code": "MKT",
+			"sheet": "MARKETING",
+			"name": "Marketing",
+			"label": "Marketing",
+			"order": 4,
+			"cell": "SETTINGS!A44:D44",
+			"business_risk": "Without a marketing system, new enquiries depend on chance; the company cannot replace lost customers or grow into new segments.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E80",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Define target industries and an Ideal Customer Profile",
+					"cell": "RECOMMENDATION MASTER!E25"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Build a named prospect list of 50-100 target customers",
+					"cell": "RECOMMENDATION MASTER!E26"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Create a B2B lead-generation system with a monthly lead target",
+					"cell": "RECOMMENDATION MASTER!E27"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Upgrade the website and Google Business profile; list on B2B portals",
+					"cell": "RECOMMENDATION MASTER!E28"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Establish a LinkedIn strategy for the company and key people",
+					"cell": "RECOMMENDATION MASTER!E29"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Prepare professional collateral (profile, presentation, brochure)",
+					"cell": "RECOMMENDATION MASTER!E30"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Define monthly marketing KPIs and review conversion by channel",
+					"cell": "RECOMMENDATION MASTER!E31"
+				}
+			]
+		},
+		{
+			"code": "SAL",
+			"sheet": "SALES",
+			"name": "Sales",
+			"label": "Sales",
+			"order": 5,
+			"cell": "SETTINGS!A45:D45",
+			"business_risk": "Without sales targets, pipeline and pricing discipline, turnover is unpredictable and margins are given away.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E81",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Set monthly sales targets by customer and product group with owners",
+					"cell": "RECOMMENDATION MASTER!E32"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Log every RFQ and measure RFQ and quotation conversion %",
+					"cell": "RECOMMENDATION MASTER!E33"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Maintain a sales pipeline and review it weekly",
+					"cell": "RECOMMENDATION MASTER!E34"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Introduce a disciplined follow-up system for open quotations",
+					"cell": "RECOMMENDATION MASTER!E35"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Standardise quotations on a costing sheet with target margin",
+					"cell": "RECOMMENDATION MASTER!E36"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Prepare a rolling 3-6 month sales forecast shared with production and purchase",
+					"cell": "RECOMMENDATION MASTER!E37"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Review order book, receivables and sales KPIs monthly",
+					"cell": "RECOMMENDATION MASTER!E38"
+				}
+			]
+		},
+		{
+			"code": "PUR",
+			"sheet": "PURCHASE",
+			"name": "Purchase & Supplier Management",
+			"label": "Purchase",
+			"order": 6,
+			"cell": "SETTINGS!A46:D46",
+			"business_risk": "Without supplier control, material cost (50-65% of sales) drifts up and supplier defects and shortages stop production.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E82",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Create an Approved Supplier List and a supplier selection process",
+					"cell": "RECOMMENDATION MASTER!E39"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Implement a supplier scorecard (Quality, Cost, Delivery, Responsiveness)",
+					"cell": "RECOMMENDATION MASTER!E40"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Measure supplier PPM and OTD monthly and share ratings with suppliers",
+					"cell": "RECOMMENDATION MASTER!E41"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Develop alternate suppliers for single-source critical items",
+					"cell": "RECOMMENDATION MASTER!E42"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Set an annual purchase cost-reduction target with tracked projects",
+					"cell": "RECOMMENDATION MASTER!E43"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Introduce material planning from the production plan with safety stocks",
+					"cell": "RECOMMENDATION MASTER!E44"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Plan supplier audits and development for critical suppliers",
+					"cell": "RECOMMENDATION MASTER!E45"
+				}
+			]
+		},
+		{
+			"code": "PRD",
+			"sheet": "PRODUCTION",
+			"name": "Production",
+			"label": "Production",
+			"order": 7,
+			"cell": "SETTINGS!A47:D47",
+			"business_risk": "Without planning, OEE and loss tracking, 25-40% of capacity is lost and deliveries are unreliable.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E83",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Prepare monthly and daily production plans from customer schedules",
+					"cell": "RECOMMENDATION MASTER!E46"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Calculate capacity by machine/process and identify bottlenecks",
+					"cell": "RECOMMENDATION MASTER!E47"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Implement OEE on critical machines with daily loss recording",
+					"cell": "RECOMMENDATION MASTER!E48"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Record downtime by reason and run a daily production meeting",
+					"cell": "RECOMMENDATION MASTER!E49"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Measure production achievement, productivity and rejection daily",
+					"cell": "RECOMMENDATION MASTER!E50"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Reduce setup time (SMED) on key machines",
+					"cell": "RECOMMENDATION MASTER!E51"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Standardise work instructions and implement 5S with performance boards",
+					"cell": "RECOMMENDATION MASTER!E52"
+				}
+			]
+		},
+		{
+			"code": "QA",
+			"sheet": "QUALITY",
+			"name": "Quality",
+			"label": "Quality",
+			"order": 8,
+			"cell": "SETTINGS!A48:D48",
+			"business_risk": "Without quality systems, customer PPM and complaints rise, ratings drop and new business allocation stops.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E84",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Establish incoming, in-process and final inspection with records",
+					"cell": "RECOMMENDATION MASTER!E53"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Prepare PFMEA and control plans for all processes",
+					"cell": "RECOMMENDATION MASTER!E54"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Implement a calibration system with status labels and traceable certificates",
+					"cell": "RECOMMENDATION MASTER!E55"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Start SPC and MSA on critical characteristics",
+					"cell": "RECOMMENDATION MASTER!E56"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Use 8D for every customer complaint and verify effectiveness",
+					"cell": "RECOMMENDATION MASTER!E57"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Measure customer PPM, internal rejection and COPQ monthly",
+					"cell": "RECOMMENDATION MASTER!E58"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Run internal process and product audits with corrective-action tracking",
+					"cell": "RECOMMENDATION MASTER!E59"
+				}
+			]
+		},
+		{
+			"code": "MNT",
+			"sheet": "MAINTENANCE",
+			"name": "Maintenance",
+			"label": "Maintenance",
+			"order": 9,
+			"cell": "SETTINGS!A49:D49",
+			"business_risk": "Without preventive maintenance and reliability data, breakdowns dominate, machine life shortens and deliveries fail.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E85",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Classify machines by criticality and start preventive maintenance on all machines",
+					"cell": "RECOMMENDATION MASTER!E60"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Record every breakdown with cause and duration; analyse monthly",
+					"cell": "RECOMMENDATION MASTER!E61"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Define and stock critical spares with min/max levels",
+					"cell": "RECOMMENDATION MASTER!E62"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Calculate MTBF, MTTR and availability for critical machines",
+					"cell": "RECOMMENDATION MASTER!E63"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Introduce operator autonomous maintenance (daily checklists)",
+					"cell": "RECOMMENDATION MASTER!E64"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Plan maintenance windows with production and track PM adherence",
+					"cell": "RECOMMENDATION MASTER!E65"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Track maintenance cost and energy consumption per machine",
+					"cell": "RECOMMENDATION MASTER!E66"
+				}
+			]
+		},
+		{
+			"code": "INV",
+			"sheet": "INVENTORY",
+			"name": "Inventory & Stores",
+			"label": "Inventory",
+			"order": 10,
+			"cell": "SETTINGS!A50:D50",
+			"business_risk": "Without inventory control, working capital locks up in stock while production still stops for shortages.",
+			"business_risk_cell": "RECOMMENDATION MASTER!E86",
+			"growth_recommendations": [
+				{
+					"seq": 1,
+					"recommendation": "Define min/max and reorder levels for raw material and critical items",
+					"cell": "RECOMMENDATION MASTER!E67"
+				},
+				{
+					"seq": 2,
+					"recommendation": "Implement FIFO with location and batch identification",
+					"cell": "RECOMMENDATION MASTER!E68"
+				},
+				{
+					"seq": 3,
+					"recommendation": "Apply ABC classification and cycle counting",
+					"cell": "RECOMMENDATION MASTER!E69"
+				},
+				{
+					"seq": 4,
+					"recommendation": "Measure stock accuracy and fix root causes of variance",
+					"cell": "RECOMMENDATION MASTER!E70"
+				},
+				{
+					"seq": 5,
+					"recommendation": "Report slow-moving, dead and aged stock monthly and dispose with approval",
+					"cell": "RECOMMENDATION MASTER!E71"
+				},
+				{
+					"seq": 6,
+					"recommendation": "Calculate inventory days for RM, WIP and FG with targets",
+					"cell": "RECOMMENDATION MASTER!E72"
+				},
+				{
+					"seq": 7,
+					"recommendation": "Organise stores with locations, controlled issues and restricted access",
+					"cell": "RECOMMENDATION MASTER!E73"
+				}
+			]
+		}
+	]
+}

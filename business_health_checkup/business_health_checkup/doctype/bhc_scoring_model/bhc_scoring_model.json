@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "autoname": "BHC-SM-.####",
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "version_label",
+  "is_default",
+  "column_break_version",
+  "rules_hash",
+  "source_reference",
+  "description",
+  "amended_from",
+  "answers_section",
+  "answer_scores",
+  "criticality_weights",
+  "maturity_section",
+  "maturity_bands",
+  "priority_section",
+  "priority_matrix",
+  "priority_rules",
+  "thresholds_section",
+  "growth_plan_threshold",
+  "strength_threshold",
+  "column_break_thresholds",
+  "kpi_watch_tolerance"
+ ],
+ "fields": [
+  {
+   "description": "e.g. Workbook v1",
+   "fieldname": "version_label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Version",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "Only a submitted model can be the default; setting it clears the flag on every other model",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Default for New Assessments",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_version",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "SHA-256 of the rule values; stored on every assessment scored with this model",
+   "fieldname": "rules_hash",
+   "fieldtype": "Data",
+   "label": "Rules Fingerprint",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "description": "Workbook file and SHA-256 for imported models",
+   "fieldname": "source_reference",
+   "fieldtype": "Data",
+   "label": "Source",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "BHC Scoring Model",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "answers_section",
+   "fieldtype": "Section Break",
+   "label": "Answers and Weights"
+  },
+  {
+   "fieldname": "answer_scores",
+   "fieldtype": "Table",
+   "label": "Answer Scores",
+   "options": "BHC Answer Score",
+   "reqd": 1
+  },
+  {
+   "fieldname": "criticality_weights",
+   "fieldtype": "Table",
+   "label": "Criticality Weights",
+   "options": "BHC Criticality Weight",
+   "reqd": 1
+  },
+  {
+   "fieldname": "maturity_section",
+   "fieldtype": "Section Break",
+   "label": "Maturity Levels"
+  },
+  {
+   "fieldname": "maturity_bands",
+   "fieldtype": "Table",
+   "label": "Maturity Bands",
+   "options": "BHC Maturity Band",
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority_section",
+   "fieldtype": "Section Break",
+   "label": "Gap Priority"
+  },
+  {
+   "fieldname": "priority_matrix",
+   "fieldtype": "Table",
+   "label": "Priority Matrix",
+   "options": "BHC Priority Matrix Entry",
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority_rules",
+   "fieldtype": "Table",
+   "label": "Priority Rules",
+   "options": "BHC Priority Rule",
+   "reqd": 1
+  },
+  {
+   "fieldname": "thresholds_section",
+   "fieldtype": "Section Break",
+   "label": "Thresholds"
+  },
+  {
+   "description": "0 to 1 (SETTINGS!B27)",
+   "fieldname": "growth_plan_threshold",
+   "fieldtype": "Float",
+   "label": "Growth Plan Trigger (department score below)",
+   "precision": "4",
+   "reqd": 1
+  },
+  {
+   "description": "0 to 1 (SETTINGS!B28)",
+   "fieldname": "strength_threshold",
+   "fieldtype": "Float",
+   "label": "Strength (department score at or above)",
+   "precision": "4",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_thresholds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "0 to 1 (SETTINGS!B29); not used until KPI tracking is in scope",
+   "fieldname": "kpi_watch_tolerance",
+   "fieldtype": "Float",
+   "label": "KPI Watch Tolerance",
+   "precision": "4"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Scoring Model",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Manager"
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Consultant"
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "version_label",
+ "track_changes": 1
+}

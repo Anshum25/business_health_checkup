@@ -1,0 +1,210 @@
+{
+ "actions": [],
+ "autoname": "BHC-BUS-.#####",
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "business_name",
+  "contact_person",
+  "designation",
+  "mobile",
+  "email",
+  "column_break_identity",
+  "industry",
+  "product_category",
+  "location",
+  "year_established",
+  "profile_section",
+  "number_of_employees",
+  "annual_turnover_lakh",
+  "export_percent",
+  "number_of_customers",
+  "column_break_profile",
+  "major_customers",
+  "number_of_plants",
+  "production_processes",
+  "consultancy_firm",
+  "access_section",
+  "assigned_users"
+ ],
+ "fields": [
+  {
+   "fieldname": "business_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Company Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Industry",
+   "options": "\nAutomotive\nEngineering\nForging\nCasting\nMachining\nSheet Metal\nFabrication\nPlastic\nRubber\nPump & Valve\nAgriculture Equipment\nElectrical\nIndustrial Components\nGeneral Engineering\nOEM\nTier-1 Manufacturing\nTier-2 Manufacturing\nOther"
+  },
+  {
+   "fieldname": "product_category",
+   "fieldtype": "Data",
+   "label": "Product Category"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location (City, State)"
+  },
+  {
+   "fieldname": "year_established",
+   "fieldtype": "Int",
+   "label": "Year Established"
+  },
+  {
+   "fieldname": "profile_section",
+   "fieldtype": "Section Break",
+   "label": "Profile"
+  },
+  {
+   "fieldname": "number_of_employees",
+   "fieldtype": "Int",
+   "label": "Number of Employees"
+  },
+  {
+   "fieldname": "annual_turnover_lakh",
+   "fieldtype": "Float",
+   "label": "Annual Turnover (Rs Lakh)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "export_percent",
+   "fieldtype": "Percent",
+   "label": "Export %"
+  },
+  {
+   "fieldname": "number_of_customers",
+   "fieldtype": "Int",
+   "label": "Number of Customers"
+  },
+  {
+   "fieldname": "column_break_profile",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "major_customers",
+   "fieldtype": "Small Text",
+   "label": "Major Customers"
+  },
+  {
+   "fieldname": "number_of_plants",
+   "fieldtype": "Int",
+   "label": "Number of Plants"
+  },
+  {
+   "fieldname": "production_processes",
+   "fieldtype": "Small Text",
+   "label": "Production Processes"
+  },
+  {
+   "fieldname": "consultancy_firm",
+   "fieldtype": "Data",
+   "label": "Consultancy Firm"
+  },
+  {
+   "fieldname": "access_section",
+   "fieldtype": "Section Break",
+   "label": "Access",
+   "permlevel": 1
+  },
+  {
+   "description": "Only these users (and System Managers) can see this business and its assessments",
+   "fieldname": "assigned_users",
+   "fieldtype": "Table",
+   "label": "Assigned Users",
+   "options": "BHC Business User",
+   "permlevel": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Business",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Manager"
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "BHC Manager"
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Consultant",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "BHC Consultant"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "business_name,location",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "business_name",
+ "track_changes": 1
+}

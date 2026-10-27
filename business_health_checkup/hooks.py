@@ -1,7 +1,9 @@
 app_name = "business_health_checkup"
 app_title = "Business Health Checkup"
 app_publisher = "Skydot Infotech"
-app_description = "Business health assessment, scoring and manager review based on the Business Health Checkup workbook"
+app_description = (
+	"Business health assessment, scoring and manager review based on the Business Health Checkup workbook"
+)
 app_email = "skydotinfotech@gmail.com"
 app_license = "mit"
 
@@ -9,6 +11,28 @@ app_license = "mit"
 # ------------------
 
 # required_apps = []
+
+after_install = "business_health_checkup.setup.install.after_install"
+after_migrate = "business_health_checkup.setup.install.after_migrate"
+
+# Record-level access: see business_health_checkup/permissions.py
+permission_query_conditions = {
+	"BHC Business": "business_health_checkup.permissions.business_query_conditions",
+	"BHC Assessment": "business_health_checkup.permissions.assessment_query_conditions",
+	"BHC Improvement Action": "business_health_checkup.permissions.action_query_conditions",
+}
+has_permission = {
+	"BHC Business": "business_health_checkup.permissions.has_business_permission",
+	"BHC Assessment": "business_health_checkup.permissions.has_assessment_permission",
+	"BHC Improvement Action": "business_health_checkup.permissions.has_action_permission",
+}
+doc_events = {
+	"DocShare": {"validate": "business_health_checkup.permissions.prevent_sharing"},
+	"Document Share Key": {"validate": "business_health_checkup.permissions.prevent_share_key"},
+}
+
+# Used by the "BHC Management Report" print format
+jinja = {"methods": ["business_health_checkup.management.management_report_for_print"]}
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -261,4 +285,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-

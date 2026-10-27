@@ -1,0 +1,359 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "autoname": "BHC-ACT-.YYYY.-.#####",
+ "creation": "2026-10-27 20:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "assessment",
+  "question",
+  "business",
+  "business_name",
+  "column_break_source",
+  "assessment_date",
+  "scoring_model",
+  "scoring_model_version",
+  "source_key",
+  "gap_section",
+  "question_code",
+  "department",
+  "question_text",
+  "answer",
+  "column_break_gap",
+  "criticality",
+  "weight",
+  "gap_points",
+  "gap_rank",
+  "priority",
+  "phase_section",
+  "phase",
+  "column_break_phase",
+  "suggested_start_date",
+  "suggested_due_date",
+  "recommendation_section",
+  "recommendation",
+  "kpi",
+  "business_risk",
+  "plan_section",
+  "action_description",
+  "responsible",
+  "responsible_user",
+  "target_measure",
+  "column_break_plan",
+  "start_date",
+  "target_date",
+  "status",
+  "completed_on",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "description": "A finalised assessment; the gap, priority, phase and suggested dates come from it",
+   "fieldname": "assessment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Source Assessment",
+   "options": "BHC Assessment",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "description": "A question of the source assessment that has a gap (answered NO or PARTIALLY)",
+   "fieldname": "question",
+   "fieldtype": "Link",
+   "label": "Gap (Question)",
+   "options": "BHC Question",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "business",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Business",
+   "options": "BHC Business",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "business.business_name",
+   "fieldname": "business_name",
+   "fieldtype": "Data",
+   "label": "Company Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_source",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Assessment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "scoring_model",
+   "fieldtype": "Link",
+   "label": "Scoring Model",
+   "options": "BHC Scoring Model",
+   "read_only": 1
+  },
+  {
+   "fieldname": "scoring_model_version",
+   "fieldtype": "Data",
+   "label": "Scoring Model Version",
+   "read_only": 1
+  },
+  {
+   "description": "Source assessment and question ID; one action per gap",
+   "fieldname": "source_key",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Source Key",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "gap_section",
+   "fieldtype": "Section Break",
+   "label": "Gap (as assessed)"
+  },
+  {
+   "fieldname": "question_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Question ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "BHC Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "question_text",
+   "fieldtype": "Small Text",
+   "label": "Question",
+   "read_only": 1
+  },
+  {
+   "fieldname": "answer",
+   "fieldtype": "Data",
+   "label": "Answer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "criticality",
+   "fieldtype": "Data",
+   "label": "Criticality",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weightage",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gap_points",
+   "fieldtype": "Float",
+   "label": "Gap (points)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gap_rank",
+   "fieldtype": "Int",
+   "label": "Gap No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phase_section",
+   "fieldtype": "Section Break",
+   "label": "Suggested Timing"
+  },
+  {
+   "description": "From the priority and the source assessment's scoring model (SETTINGS!G20:G22)",
+   "fieldname": "phase",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "90-Day Phase (suggested)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_phase",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Assessment date + start day of the phase (SCORE CALCULATION!T25); a suggestion, not an agreed date",
+   "fieldname": "suggested_start_date",
+   "fieldtype": "Date",
+   "label": "Suggested Start",
+   "read_only": 1
+  },
+  {
+   "description": "Assessment date + due day of the phase (SCORE CALCULATION!U25); never makes the action overdue",
+   "fieldname": "suggested_due_date",
+   "fieldtype": "Date",
+   "label": "Suggested Due",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "recommendation_section",
+   "fieldtype": "Section Break",
+   "label": "Recommendation, KPI and Risk"
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Small Text",
+   "label": "Recommendation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "kpi",
+   "fieldtype": "Small Text",
+   "label": "KPI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_risk",
+   "fieldtype": "Small Text",
+   "label": "Business Risk if Unresolved",
+   "read_only": 1
+  },
+  {
+   "fieldname": "plan_section",
+   "fieldtype": "Section Break",
+   "label": "Action"
+  },
+  {
+   "description": "Defaults to the recommendation; edit it to the action actually agreed",
+   "fieldname": "action_description",
+   "fieldtype": "Small Text",
+   "label": "Agreed Action",
+   "reqd": 1
+  },
+  {
+   "description": "Name of the person responsible (as in ACTION PLAN, free text)",
+   "fieldname": "responsible",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Responsible"
+  },
+  {
+   "description": "Optional. Must already be able to access this business; naming a user here gives no access",
+   "fieldname": "responsible_user",
+   "fieldtype": "Link",
+   "label": "Responsible User",
+   "options": "User"
+  },
+  {
+   "fieldname": "target_measure",
+   "fieldtype": "Small Text",
+   "label": "Target / Measure"
+  },
+  {
+   "fieldname": "column_break_plan",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Agreed start; blank until agreed",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "description": "Agreed target; only this date can make the action overdue",
+   "fieldname": "target_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Target Date"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nIn Progress\nCompleted\nHold",
+   "reqd": 1
+  },
+  {
+   "description": "Set by the system when the status becomes Completed",
+   "fieldname": "completed_on",
+   "fieldtype": "Date",
+   "label": "Completed On",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-27 20:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Improvement Action",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Consultant",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "business_name,question_code,priority,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "question_code",
+ "track_changes": 1
+}

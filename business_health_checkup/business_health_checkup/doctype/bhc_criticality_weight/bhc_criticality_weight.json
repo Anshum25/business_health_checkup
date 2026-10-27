@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "criticality",
+  "weight",
+  "source_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "criticality",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Criticality",
+   "options": "Critical\nImportant\nStandard\nBasic",
+   "reqd": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight (points)",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "description": "Workbook cell this value was imported from",
+   "fieldname": "source_reference",
+   "fieldtype": "Data",
+   "label": "Source cell",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Criticality Weight",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

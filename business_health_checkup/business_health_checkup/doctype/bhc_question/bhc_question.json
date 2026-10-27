@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "autoname": "field:question_code",
+ "creation": "2026-10-27 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "question_code",
+  "department",
+  "seq",
+  "column_break_main",
+  "criticality",
+  "is_active",
+  "source_reference",
+  "question_section",
+  "sub_category",
+  "question",
+  "gap_section",
+  "recommendation",
+  "kpi",
+  "business_risk"
+ ],
+ "fields": [
+  {
+   "description": "Department code, a hyphen and a number, e.g. STR-01",
+   "fieldname": "question_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Question ID",
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "BHC Department",
+   "reqd": 1
+  },
+  {
+   "description": "Order within the department",
+   "fieldname": "seq",
+   "fieldtype": "Int",
+   "label": "Seq",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "The weight comes from the scoring model used by each assessment",
+   "fieldname": "criticality",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Criticality",
+   "options": "Critical\nImportant\nStandard\nBasic",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "description": "Only active questions are copied into new assessments",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "description": "Workbook cell this value was imported from",
+   "fieldname": "source_reference",
+   "fieldtype": "Data",
+   "label": "Source cell",
+   "read_only": 1
+  },
+  {
+   "fieldname": "question_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sub_category",
+   "fieldtype": "Data",
+   "label": "Sub-Category"
+  },
+  {
+   "fieldname": "question",
+   "fieldtype": "Small Text",
+   "label": "Question",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gap_section",
+   "fieldtype": "Section Break",
+   "label": "If the Answer Leaves a Gap"
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Small Text",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "kpi",
+   "fieldtype": "Small Text",
+   "label": "KPI"
+  },
+  {
+   "fieldname": "business_risk",
+   "fieldtype": "Small Text",
+   "label": "Business Risk if Unresolved"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Health Checkup",
+ "name": "BHC Question",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Manager"
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "BHC Consultant"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "department,sub_category",
+ "sort_field": "question_code",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "question_code",
+ "track_changes": 1
+}
